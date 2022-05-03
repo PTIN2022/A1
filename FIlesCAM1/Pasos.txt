@@ -1,0 +1,34 @@
+1- Crear un directorio donde almacenar lo que descargaremos el Tensorflow lite desde github.
+	-Nos situamos en el directorio donde querremos que se encuentre el directorio contenedor de todos los ficheros.
+	-Ejecutar la siguiente comanda:
+		git clone https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi.git
+	-Para que todo sea mas facil y no escribir ese nombre tan largo del directorio, ejecutamos por ejemplo:
+		mv TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi.git tflite
+		
+	-Ya tenemos la base de tensorflow que nos permitira detectar objetos!.
+	
+2-Hacemos un cd a tflite(o el nombre que se haya escogido)
+
+3-Creamos un entorno virtual de tal manera que evitemos cualquier error/complicaciones y sepamos que cosas instalamos
+	-Ejecutamos la siguiente comanda:
+		pip3 install virtualenv
+	-Ejecutamos una comanda como la siguiente:
+		python3 -m venv entorn-tflite
+	-Esto nos creara un directorio dentro de tflite que sera nuestro entorno virutal
+
+4-Activamos el entorno virtual
+	-Con la comanda siguiente:
+		source entorn-tflite/bin/activate
+	OJO!!!! HABRA QUE HACERLO SIEMPRE QUE INICIEMOS UNA TERMINAL (PASO 2+PASO 4)!!!!!
+
+5-Ejecutamos el script dependencies.sh (puede tardar unos minutos, CHILL)
+
+6-Podemos crear un directorio donde guardaremos nuestro modelo para detectar matriculas.
+	-mkdir model1
+	-Guardaremos en dicho directorio:
+		-detect.tflite
+		-labelmap.txt
+7-Ejecutamos el programa que nos permite detectar objetos usando dicho modelo.
+	-Se hace mediante la comanda siguiente:
+		python3 TFLite_detection_webcam.py --modeldir=model1
+	-Automaticamente se nos abrira una ventana con la webcam y veremos que va captando, posteriormente podemos pasar una matricula de tal manera que la camara tenga vision de ello y veremos con que nive de certeza nos dice si es una matr o no.
