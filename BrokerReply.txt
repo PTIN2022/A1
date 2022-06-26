@@ -1,0 +1,2 @@
+mosquitto_pub -h test.mosquitto.org -p 1883 -t "gesys/estacion/8/lista_admitidos" --qos 1 -m '{"valido": "0"}'
+mosquitto_pub -h test.mosquitto.org -p 1883 -t "gesys/estacion/8/lista_admitidos" --qos 1 -m '{"valido": "1"}'
